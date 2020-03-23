@@ -1,0 +1,20 @@
+h2{
+    font-size: 1rem;
+}
+h3{
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.header{
+    text-align: center;
+    margin-top: 3rem;
+}
+.my-auto {
+    margin-top: auto!important;
+}
+/* .footer{
+    background-color: black;
+} */
+p{
+    margin-top: 1rem;
+}

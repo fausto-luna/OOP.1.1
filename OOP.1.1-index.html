@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="OOP.1.1.css">
+    <title>BANK OOP.1.1</title>
+  </head>
+  <body>
+    <div class="container-fluid"><!-- ***************** container ***************** -->
+        <div class="header" class="row">
+            <div class="col-lg-12">
+                <h1>BANK</h1>
+                <h2 class="text-muted">OOP.1.1</h2>
+            </div>
+        </div>
+      <div class="row" id="row1"> <!-- ================== row 1 ================== --> 
+        <div class="col-sm-3"><!-- ---------------- col 1 of 4 ------------------>
+          <div class="text-center">
+            <h3>Create Bank Account</h3>
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">First Name</span>
+            </div>
+            <input type="text" id="nameID" placeholder="John" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Last Name</span>
+            </div>
+            <input type="text" id="surnameID" placeholder="Lennon" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">IBAN</span>
+            </div>
+            <input type="text" id="ibanID" placeholder="ES79 2100 0813 6101 2345 6789" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Balance</span>
+            </div>
+            <input type="number" disabled id="balanceID" value = '' placeholder="50€ (mandatory amount)" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="text-center">
+            <button type="button" onclick="createBankAccount()" class="btn btn-sm btn-outline-dark">CREATE</button>
+          </div>
+        </div><!-- ---------------- col 1 of 4 ends ---------------- -->
+        <div class="col-sm-3"><!-- ---------------- col 2 of 4---------------- -->
+          <div class="text-center">
+            <h3>Check Account</h3>
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">First Name</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="nameCheckID">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Last Name</span>
+            </div>
+            <input type="text" class="form-control" id="surnameCheckID" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">IBAN</span>
+            </div>
+            <input type="text" class="form-control" id="ibanCheckID" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-sm btn-outline-dark" onclick="checkAccount()">CHECK</button>
+          </div>
+        </div>
+        <div class="col-sm-3"><!-- ---------------- col 3 of 4 ---------------- -->
+          <div class="text-center">
+            <h3>Update Account</h3>
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">First Name</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="nameUpdateID">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Last Name</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="surnameUpdateID">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">IBAN</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="ibanUpdateID">
+          </div>
+          <div class="text-center">
+            <button type="button" onclick="updateAccount()" class="btn btn-sm btn-outline-dark">UPDATE</button>
+          </div>
+        </div>
+        <div class="col-sm-3"><!-- ---------------- col 4 of 4 ---------------- -->
+          <div class="text-center">
+            <h3>Delete Account</h3>
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">First Name</span>
+            </div>
+            <input type="text" class="form-control" id="deleteNameID" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Last Name</span>
+            </div>
+            <input type="text" class="form-control" id="deleteSurnameID" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">IBAN</span>
+            </div>
+            <input type="text" class="form-control" id="deleteIbanID" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-sm btn-outline-dark" onclick="deleteAccount()">DELETE</button>
+          </div>
+        </div>
+      </div><!-- ================== row 1 ends ================== --> 
+      <div class="row"> <!-- ================== row 2 ================== --> 
+        <div class="col-sm-3"><!-- ---------------- col 1 of 4---------------- -->
+          <p id="resultCreateID"></p>
+          <div class="text-center">
+            <button type="button" onclick="create5Accounts()" class="text-center btn btn-sm btn-outline-dark">CREATE 5 ACCOUNTS</button>
+            <p id="txtResultCreate5AccountsID"></p>
+          </div>
+        </div>
+        <div class="col-sm-3"><!-- ---------------- col 2 of 4---------------- -->
+          <p id="resultCheckID"></p>
+        </div>
+        <div class="col-sm-3"><!-- ---------------- col 3 of 4 ---------------- -->
+          <p id="resultUpdateID"></p>
+        </div>
+        <div class="col-sm-3"><!-- ---------------- col 4 of 4 ---------------- -->
+          <p id="resultDeleteID"></p>
+        </div>
+      </div><!-- ================== row 2 ends ================== --> 
+      <div class="footer text-center fixed-bottom">
+        <footer class="my-auto py-3" class="" id="containerFooter">
+          <p class="text-muted"><a href="https://github.com/fausto-luna/OPP.1.1"><span class="text-muted">github</span></a></p>
+      </footer>
+      </div>
+    </div><!-- ***************** container ends ***************** --> 
+    <script src="class_BankAccount.js"></script>
+    <script src="methods_BankAccount.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+  </body>
+</html>
